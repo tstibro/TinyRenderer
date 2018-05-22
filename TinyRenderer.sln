@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyRenderer", "TinyRenderer\TinyRenderer.csproj", "{7BF2F596-9F66-42DC-A832-2E20D6D80CD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyRendererLib", "TinyRendererLib\TinyRendererLib.csproj", "{B316B996-193D-467B-A992-A4FB25B0CDCB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BF2F596-9F66-42DC-A832-2E20D6D80CD4}.Debug|x86.ActiveCfg = Debug|x86
+		{7BF2F596-9F66-42DC-A832-2E20D6D80CD4}.Debug|x86.Build.0 = Debug|x86
+		{7BF2F596-9F66-42DC-A832-2E20D6D80CD4}.Release|x86.ActiveCfg = Release|x86
+		{7BF2F596-9F66-42DC-A832-2E20D6D80CD4}.Release|x86.Build.0 = Release|x86
+		{B316B996-193D-467B-A992-A4FB25B0CDCB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B316B996-193D-467B-A992-A4FB25B0CDCB}.Debug|x86.Build.0 = Debug|Any CPU
+		{B316B996-193D-467B-A992-A4FB25B0CDCB}.Release|x86.ActiveCfg = Release|Any CPU
+		{B316B996-193D-467B-A992-A4FB25B0CDCB}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
