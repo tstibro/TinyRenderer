@@ -21,10 +21,10 @@ namespace TinyRendererLib
 		/// where k is slope
 		///       q is y-intercept
         /// </summary>
-        /// <param name="p0x">P0x.</param>
-        /// <param name="p0y">P0y.</param>
-        /// <param name="p1x">P1x.</param>
-        /// <param name="p1y">P1y.</param>
+		/// <param name="p0x">Start point's X-Coordinate</param>
+		/// <param name="p0y">Start point's Y-Coordinate</param>
+		/// <param name="p1x">End point's X-Coordinate</param>
+		/// <param name="p1y">End point's Y-Coordinate</param>
         public void DrawLine(int p0x, int p0y, int p1x, int p1y)
 		{
 			int deltaY = p1y - p0y;
@@ -36,13 +36,18 @@ namespace TinyRendererLib
                 : ((double)deltaY) / ((double)deltaX);
             
 			// To calculate q (y-intercept) we can use either of the points
-            double q = (double)p0y - slope * (double)p0x;
+            double yIntercept = (double)p0y - slope * (double)p0x;
             
             for (int x = p0x; x <= p1x; x++)
             {
-                double y = slope * (double)x + q;
-				drawingSurface.DrawPixel(x, (int)Math.Round(y));
+				double y = slope * (double)x + yIntercept;
+				drawPixel(x, (int)Math.Round(y));
             }
+		}
+
+        private void drawPixel(int x, int y)
+		{
+			drawingSurface.DrawPixel(x ,y);
 		}
     }
 }
