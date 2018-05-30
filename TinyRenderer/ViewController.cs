@@ -61,7 +61,7 @@ namespace TinyRenderer
 
 			rendererSurface.Clear();
 			rendererSurface.SetPixelColor(255, 0, 0, 255);
-			drawLinesInCircle(30, 12);
+			drawLinesInCircle(25, 12);
 			RefreshImage();
         }
 
