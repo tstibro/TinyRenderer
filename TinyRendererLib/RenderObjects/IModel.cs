@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using GeometryDataStructures.Vectors;
+using TinyRendererLib.GeometryDataStructures.Vectors;
 
 namespace TinyRendererLib.RenderObjects
 {

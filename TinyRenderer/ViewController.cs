@@ -115,8 +115,7 @@ namespace TinyRenderer
 		private void draw3Dmodel()
         {
 			OBJmodel model = new OBJmodel("african_head.obj");
-			OBJmodelAdapter modelAdapter = new OBJmodelAdapter(model);
-			renderer.Render(modelAdapter);
+			renderer.Render(model);
         }
     }
 }

@@ -32,15 +32,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IDrawingSurface.cs" />
     <Compile Include="RenderObjects\IModel.cs" />
+    <Compile Include="GeometryDataStructures\Vectors\Vector2f.cs" />
+    <Compile Include="GeometryDataStructures\Vectors\Vector2i.cs" />
+    <Compile Include="GeometryDataStructures\Vectors\Vector3f.cs" />
+    <Compile Include="GeometryDataStructures\Vectors\Vector3i.cs" />
+    <Compile Include="GeometryDataStructures\Vectors\Vector4f.cs" />
+    <Compile Include="GeometryDataStructures\Vectors\Vector4i.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="RenderObjects\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GeometryDataStructuresLib\GeometryDataStructuresLib.csproj">
-      <Project>{92468CB9-3B70-47D1-B6BE-4E8700DECC11}</Project>
-      <Name>GeometryDataStructuresLib</Name>
-    </ProjectReference>
+    <Folder Include="GeometryDataStructures\" />
+    <Folder Include="GeometryDataStructures\Vectors\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace GeometryDataStructures.Vectors
+namespace TinyRendererLib.GeometryDataStructures.Vectors
 {
     public struct Vector4f
     {

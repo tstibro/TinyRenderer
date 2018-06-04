@@ -1,5 +1,5 @@
 ﻿using System;
-using GeometryDataStructures.Vectors;
+using TinyRendererLib.GeometryDataStructures.Vectors;
 using TinyRendererLib.RenderObjects;
 
 namespace TinyRendererLib

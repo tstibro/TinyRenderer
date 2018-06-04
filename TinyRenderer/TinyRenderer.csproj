@@ -83,7 +83,6 @@
     </Compile>
     <Compile Include="CGDataProviderCreateWithData.cs" />
     <Compile Include="Rendering\RendererSurface.cs" />
-    <Compile Include="Rendering\OBJmodelAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
@@ -94,12 +93,8 @@
       <Name>TinyRendererLib</Name>
     </ProjectReference>
     <ProjectReference Include="..\GraphicsModelImporterLib\GraphicsModelImporterLib.csproj">
-      <Project>{A88C760D-059B-4237-93D5-9625D38EDAE8}</Project>
+      <Project>{D2014D6E-7977-4607-A294-CEF0EEFD18DF}</Project>
       <Name>GraphicsModelImporterLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GeometryDataStructuresLib\GeometryDataStructuresLib.csproj">
-      <Project>{92468CB9-3B70-47D1-B6BE-4E8700DECC11}</Project>
-      <Name>GeometryDataStructuresLib</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

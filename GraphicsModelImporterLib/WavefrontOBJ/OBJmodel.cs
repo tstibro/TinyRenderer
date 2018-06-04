@@ -2,33 +2,24 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using GeometryDataStructures.Vectors;
+using TinyRendererLib.GeometryDataStructures.Vectors;
+using TinyRendererLib.RenderObjects;
 
 namespace GraphicsModelImporterLib.WavefrontOBJ
 {
-    public class OBJmodel
+	public class OBJmodel : IModel
     {
+		private const int OBJ_VERTEX_INDEX_OFFSET = 1; // OBJ vertex indices start at 1
+
 		/// <summary>
         /// The vertices.
         /// </summary>
         private IList<Vector4f> vertices;
-		public IList<Vector4f> Vertices 
-		{ 
-			get {
-				return vertices;
-			} 
-		}
 
         /// <summary>
         /// The vertex normals.
         /// </summary>
         private IList<Vector3f> vertexNormals;
-		public IList<Vector3f> VertexNormals 
-		{ 
-			get {
-				return vertexNormals;
-			} 
-		}
 
         /// <summary>
         /// List of faces.
@@ -36,12 +27,6 @@ namespace GraphicsModelImporterLib.WavefrontOBJ
         /// Each vector is defined as (vertex index, texture coordinate index, vertex normal index)
         /// </summary>
         private IList<Tuple<Vector3i, Vector3i, Vector3i>> faces;
-		public IList<Tuple<Vector3i, Vector3i, Vector3i>> Faces 
-		{ 
-			get {
-				return faces;
-			} 
-		}
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:TinyRendererLib.ModelFileFormats.WavefrontOBJ.OBJmodel"/> class.
@@ -56,6 +41,40 @@ namespace GraphicsModelImporterLib.WavefrontOBJ
             loadModelFrom(filePath);
         }
 
+		#region IModel
+		public int Vertices()
+        {
+			return vertices.Count;
+        }
+
+        public Vector4f Vertex(int index)
+        {
+			return vertices[index];
+        }
+
+        public int Faces()
+        {
+			return faces.Count;
+        }
+
+        public Vector4f Vertex(int faceIndex, int nthVertex)
+        {
+			var face = faces[faceIndex];
+            if (nthVertex == 0)
+            {
+                return Vertex(face.Item1.x - OBJ_VERTEX_INDEX_OFFSET);
+            }
+            else if (nthVertex == 1)
+            {
+                return Vertex(face.Item2.x - OBJ_VERTEX_INDEX_OFFSET);
+            }
+            else
+            {
+                return Vertex(face.Item3.x - OBJ_VERTEX_INDEX_OFFSET);
+            }
+        }
+		#endregion
+              
 		private void loadModelFrom(string filePath)
 		{
 			using(StreamReader sr = new StreamReader(filePath))
@@ -110,6 +129,6 @@ namespace GraphicsModelImporterLib.WavefrontOBJ
 					}
 				}
 			}
-		}
+		}      
 	}
 }
