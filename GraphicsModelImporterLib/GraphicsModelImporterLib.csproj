@@ -3,14 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B316B996-193D-467B-A992-A4FB25B0CDCB}</ProjectGuid>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{A88C760D-059B-4237-93D5-9625D38EDAE8}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>TinyRendererLib</RootNamespace>
-    <AssemblyName>TinyRendererLib</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
-    <SynchReleaseVersion>false</SynchReleaseVersion>
+    <RootNamespace>GraphicsModelImporterLib</RootNamespace>
+    <AssemblyName>GraphicsModelImporterLib</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,21 +17,25 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Renderer.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="IDrawingSurface.cs" />
-    <Compile Include="RenderObjects\IModel.cs" />
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="RenderObjects\" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WavefrontOBJ\OBJmodel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WavefrontOBJ\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GeometryDataStructuresLib\GeometryDataStructuresLib.csproj">
@@ -42,5 +43,5 @@
       <Name>GeometryDataStructuresLib</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

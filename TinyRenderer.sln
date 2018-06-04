@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyRenderer", "TinyRendere
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyRendererLib", "TinyRendererLib\TinyRendererLib.csproj", "{B316B996-193D-467B-A992-A4FB25B0CDCB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsModelImporterLib", "GraphicsModelImporterLib\GraphicsModelImporterLib.csproj", "{A88C760D-059B-4237-93D5-9625D38EDAE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometryDataStructuresLib", "GeometryDataStructuresLib\GeometryDataStructuresLib.csproj", "{92468CB9-3B70-47D1-B6BE-4E8700DECC11}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,5 +23,13 @@ Global
 		{B316B996-193D-467B-A992-A4FB25B0CDCB}.Debug|x86.Build.0 = Debug|Any CPU
 		{B316B996-193D-467B-A992-A4FB25B0CDCB}.Release|x86.ActiveCfg = Release|Any CPU
 		{B316B996-193D-467B-A992-A4FB25B0CDCB}.Release|x86.Build.0 = Release|Any CPU
+		{A88C760D-059B-4237-93D5-9625D38EDAE8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A88C760D-059B-4237-93D5-9625D38EDAE8}.Debug|x86.Build.0 = Debug|Any CPU
+		{A88C760D-059B-4237-93D5-9625D38EDAE8}.Release|x86.ActiveCfg = Release|Any CPU
+		{A88C760D-059B-4237-93D5-9625D38EDAE8}.Release|x86.Build.0 = Release|Any CPU
+		{92468CB9-3B70-47D1-B6BE-4E8700DECC11}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{92468CB9-3B70-47D1-B6BE-4E8700DECC11}.Debug|x86.Build.0 = Debug|Any CPU
+		{92468CB9-3B70-47D1-B6BE-4E8700DECC11}.Release|x86.ActiveCfg = Release|Any CPU
+		{92468CB9-3B70-47D1-B6BE-4E8700DECC11}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

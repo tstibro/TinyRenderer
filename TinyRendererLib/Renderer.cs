@@ -1,4 +1,6 @@
 ﻿using System;
+using GeometryDataStructures.Vectors;
+using TinyRendererLib.RenderObjects;
 
 namespace TinyRendererLib
 {
@@ -15,6 +17,27 @@ namespace TinyRendererLib
         {
 			this.drawingSurface = drawingSurface;
         }
+
+        /// <summary>
+        /// Renders the specified model.
+        /// </summary>
+        /// <param name="model">Model.</param>
+        public void Render(IModel model)
+		{
+			for (int face = 0; face < model.Faces(); face++)
+			{
+				for (int faceVertex = 0; faceVertex < 3; faceVertex++)
+				{
+					Vector4f v0 = model.Vertex(face, faceVertex);
+					Vector4f v1 = model.Vertex(face, (faceVertex + 1) % 3);
+					int x0 = (int)((v0.x+1.0) * drawingSurface.Width() / 2.0); 
+                    int y0 = (int)((v0.y+1.0) * drawingSurface.Height() / 2.0); 
+                    int x1 = (int)((v1.x+1.0) * drawingSurface.Width() / 2.0);  
+                    int y1 = (int)((v1.y+1.0) * drawingSurface.Height() / 2.0);  
+					DrawLine(x0, y0, x1, y1); 
+				}            
+			}
+		}
 
         /// <summary>
         /// Draws the line using formula y = k * x + q

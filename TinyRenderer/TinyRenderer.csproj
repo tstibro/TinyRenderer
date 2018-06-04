@@ -83,6 +83,7 @@
     </Compile>
     <Compile Include="CGDataProviderCreateWithData.cs" />
     <Compile Include="Rendering\RendererSurface.cs" />
+    <Compile Include="Rendering\OBJmodelAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
@@ -92,6 +93,17 @@
       <Project>{B316B996-193D-467B-A992-A4FB25B0CDCB}</Project>
       <Name>TinyRendererLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GraphicsModelImporterLib\GraphicsModelImporterLib.csproj">
+      <Project>{A88C760D-059B-4237-93D5-9625D38EDAE8}</Project>
+      <Name>GraphicsModelImporterLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeometryDataStructuresLib\GeometryDataStructuresLib.csproj">
+      <Project>{92468CB9-3B70-47D1-B6BE-4E8700DECC11}</Project>
+      <Name>GeometryDataStructuresLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\african_head.obj" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>
