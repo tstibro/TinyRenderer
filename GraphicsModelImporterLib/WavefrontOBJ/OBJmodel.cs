@@ -104,28 +104,30 @@ namespace GraphicsModelImporterLib.WavefrontOBJ
 					}
 					else if (parts[0] == "f" && parts.Count() == 4) // Read face
 					{
-                        // Read X Part
-                        Vector3i faceX = new Vector3i();
-						string[] xFaceParts = parts[1].Split('/');
-                        faceX.x = int.Parse(xFaceParts[0]); // vertex index
-						faceX.y = xFaceParts.Count() > 1 ? int.Parse(xFaceParts[1]) : -1; // texture coordinate index
-						faceX.z = xFaceParts.Count() > 2 ? int.Parse(xFaceParts[2]) : -1; // vertex normal index
+						string[] faceElementParts; // used to deconstruct face element parts
 
-                        // Read Y Part
-						Vector3i faceY = new Vector3i();
-                        string[] yFaceParts = parts[2].Split('/');
-						faceY.x = int.Parse(yFaceParts[0]); // vertex index
-						faceY.y = yFaceParts.Count() > 1 ? int.Parse(yFaceParts[1]) : -1; // texture coordinate index
-						faceY.z = yFaceParts.Count() > 2 ? int.Parse(yFaceParts[2]) : -1; // vertex normal index
+                        // Read 1st face element
+						Vector3i faceElement1 = new Vector3i();
+						faceElementParts = parts[1].Split('/');
+						faceElement1.x = int.Parse(faceElementParts[0]); // vertex index
+						faceElement1.y = faceElementParts.Count() > 1 ? int.Parse(faceElementParts[1]) : -1; // texture coordinate index
+						faceElement1.z = faceElementParts.Count() > 2 ? int.Parse(faceElementParts[2]) : -1; // vertex normal index
 
-                        // Read Z Part
-						Vector3i faceZ = new Vector3i();
-                        string[] zFaceParts = parts[3].Split('/');
-						faceZ.x = int.Parse(zFaceParts[0]); // vertex index
-						faceZ.y = zFaceParts.Count() > 1 ? int.Parse(zFaceParts[1]) : -1; // texture coordinate index
-						faceZ.z = zFaceParts.Count() > 2 ? int.Parse(zFaceParts[2]) : -1; // vertex normal index
+						// Read 2nd face element
+						Vector3i faceElement2 = new Vector3i();
+						faceElementParts = parts[2].Split('/');
+						faceElement2.x = int.Parse(faceElementParts[0]); // vertex index
+						faceElement2.y = faceElementParts.Count() > 1 ? int.Parse(faceElementParts[1]) : -1; // texture coordinate index
+						faceElement2.z = faceElementParts.Count() > 2 ? int.Parse(faceElementParts[2]) : -1; // vertex normal index
 
-						faces.Add(new Tuple<Vector3i, Vector3i, Vector3i>(faceX, faceY, faceZ));
+						// Read 3rd face element
+						Vector3i faceElement3 = new Vector3i();
+						faceElementParts = parts[3].Split('/');
+						faceElement3.x = int.Parse(faceElementParts[0]); // vertex index
+						faceElement3.y = faceElementParts.Count() > 1 ? int.Parse(faceElementParts[1]) : -1; // texture coordinate index
+						faceElement3.z = faceElementParts.Count() > 2 ? int.Parse(faceElementParts[2]) : -1; // vertex normal index
+
+						faces.Add(new Tuple<Vector3i, Vector3i, Vector3i>(faceElement1, faceElement2, faceElement3));
 					}
 				}
 			}
